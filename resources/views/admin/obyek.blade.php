@@ -14,7 +14,7 @@
 		<!-- meta character set -->
 		<meta charset="UTF-8">
 		<!-- Site Title -->
-		<title>@yield('title')</title>
+		<title>Dashboard Admin</title>
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
 			<!--CSS============================================= -->
@@ -31,21 +31,20 @@
 			<section class="banner-area" id="home">
 				<!-- Start Header Area -->
 				<header class="default-header">
-					<nav class="navbar navbar-expand-lg navbar-light">
+					<nav class="navbar navbar-expand-lg navbar-dark">
 						<div class="container">
 							  <a class="navbar-brand" href="/">
 								  <img src="/img/logo_.png" alt="">
 							  </a>
 							  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-							    <span class="text-white lnr lnr-menu"></span>
+							    <span class="text-black lnr lnr-menu"></span>
 							  </button>
 
 							  <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
 							    <ul class="navbar-nav">
 									
-									<!-- <li><a href="/">Tentang</a></li>									 -->
-									<li><a href="{{url('/user/objek_wisata')}}">Obyek Wisata</a></li>
-									<li><a href="{{url('/user/merchandise')}}">Merchandise</a></li>
+									<li><a href="{{url('/admin/objek_wisata')}}">Obyek Wisata</a></li>
+									<li><a href="{{url('/admin/merchandise')}}">Merchandise</a></li>
 									<!-- Dropdown -->
 								    <li class="dropdown">
 										
@@ -61,7 +60,7 @@
                                         Pengguna
 										</a>
 										<div class="dropdown-menu">
-										  <a class="dropdown-item" href="{{url('register')}}">Sign Up</a>
+										  <a class="dropdown-item" href="{{url('register')}}">Daftar</a>
                                           <a class="dropdown-item" href="{{url('login')}}">Login</a>
 										</div>
 									  </li>
@@ -73,15 +72,59 @@
 					</nav>
 				</header>
 				<!-- End Header Area -->
-
+				<div class="container">
+					<div class="row height align-items-center justify-content-center">
+						<div class="col-lg-10">
+							<div class="generic-banner-content">
+								<h2 class="text-white">Obyek Wisata</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>		
+			<!-- End banner Area -->				
 			</section>
-            @yield('container')
-            <!-- start footer Area -->	
 
+			<body>
 			<br>
 			<br>
-			<br>
-			<br>	
+				<div class="container">	
+							
+				<br>
+				
+				<div class="box-header">
+          			<a href="/objek_wisata/tambah" class="btn btn-primary" role="button" title="Tambah Data"><i class="glyphicon glyphicon-plus"></i> Tambah</a>
+          			</div>
+				<br/>
+
+				<table class="table table-bordered">
+					<tr>
+						<th>Id Objek</th>
+						<th>Nama Objek</th>
+						<th>Alamat</th>
+						<th>Jam Operasional</th>
+						<th>Harga tiket</th>
+						<th>Aksi</th>
+					</tr>
+					@foreach($objek as $p)
+                	<tr>
+						<td>{{ $p->id_objek }}</td>
+						<td>{{ $p->nama_objek }}</td>
+						<td>{{ $p->Alamat }}</td>
+						<td>{{ $p->jam_operasional }}</td>
+						<td>{{ $p->harga_tiket }}</td>
+						<td>
+                            <a href="/objek_wisata/edit/{{ $p->id_objek }}" class="btn btn-primary" role="button" title="edit"><i class="glyphicon glyphicon-plus"></i>Edit</a>
+                            <a href="/objek_wisata/hapus/{{ $p->id_objek }}" class="btn btn-primary" role="button" title="Tambah Data"><i class="glyphicon glyphicon-plus"></i>Hapus</a>
+                            <a href="/objek_wisata/lihat/{{ $p->id_objek }}" class="btn btn-primary" role="button" title="Lihat Data"><i class="glyphicon glyphicon-plus"></i>Lihat</a>
+						</td>
+                    </td>    
+                </tr> 
+                @endforeach
+				</table>
+			</div>
+		
+			<!-- start footer Area -->		
 			<footer class="footer-area section-gap">
 				<div class="container">
 					<div class="row">
@@ -89,7 +132,7 @@
 							<div class="single-footer-widget">
 								<h6>About Us</h6>
 								<p>
-									Annida Rizki | Auliya Khanza | Ba'auliyaul Afifah | Maheswari Paramita
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.
 								</p>
 								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             		<p class="footer-text">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>

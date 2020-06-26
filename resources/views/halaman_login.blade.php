@@ -53,7 +53,7 @@
                         <input type="hidden" name="role" value="user">
                         <h3>Login</h3>
                         <br>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <div class="form-row">
                                 <div class="form-wrapper">
                                     <label for="alamat">Nama :</label>
@@ -62,7 +62,7 @@
                                     
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-row">
                             <div class="form-wrapper">
@@ -83,14 +83,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
+                        <!-- <div class="form-row">
                             <div class="form-wrapper">
                                 <div class="form-group">
                                     <label for="alamat">Konfirmasi Password :</label>
                                     <input type="password" class="form-control" id="confirmation" name="confirmation">
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-row">
                             <div class="form-wrapper">

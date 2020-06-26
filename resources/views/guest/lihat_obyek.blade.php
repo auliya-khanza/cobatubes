@@ -14,7 +14,7 @@
 		<!-- meta character set -->
 		<meta charset="UTF-8">
 		<!-- Site Title -->
-		<title>@yield('title')</title>
+		<title>ihat Obyek Wisata</title>
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
 			<!--CSS============================================= -->
@@ -31,21 +31,18 @@
 			<section class="banner-area" id="home">
 				<!-- Start Header Area -->
 				<header class="default-header">
-					<nav class="navbar navbar-expand-lg navbar-light">
+					<nav class="navbar navbar-expand-lg  navbar-dark">
 						<div class="container">
-							  <a class="navbar-brand" href="/">
-								  <img src="/img/logo_.png" alt="">
-							  </a>
+							  
 							  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-							    <span class="text-white lnr lnr-menu"></span>
+							    <span class="text-black lnr lnr-menu"></span>
 							  </button>
 
 							  <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
 							    <ul class="navbar-nav">
 									
-									<!-- <li><a href="/">Tentang</a></li>									 -->
-									<li><a href="{{url('/user/objek_wisata')}}">Obyek Wisata</a></li>
-									<li><a href="{{url('/user/merchandise')}}">Merchandise</a></li>
+									<li><a href="{{url('/admin/objek_wisata')}}">Obyek Wisata</a></li>
+									<li><a href="{{url('/admin/objek_wisata/merchandise')}}">Merchandise</a></li>
 									<!-- Dropdown -->
 								    <li class="dropdown">
 										
@@ -61,7 +58,7 @@
                                         Pengguna
 										</a>
 										<div class="dropdown-menu">
-										  <a class="dropdown-item" href="{{url('register')}}">Sign Up</a>
+										  <a class="dropdown-item" href="{{url('register')}}">Daftar</a>
                                           <a class="dropdown-item" href="{{url('login')}}">Login</a>
 										</div>
 									  </li>
@@ -72,16 +69,42 @@
 						</div>
 					</nav>
 				</header>
-				<!-- End Header Area -->
+			<<body>
+			<div class="jumbotron jumbotron-fluid">
+			@foreach($objek as $p)
+			<div class="container">
+				<h1 class="display-4">{{ $p->nama_objek }}</h1>
+			</div>
+			</div>
+			<div class="container">
+                <br><br>
 
-			</section>
-            @yield('container')
-            <!-- start footer Area -->	
+				<h4>Foto</h4><br>
+                <p><img src="{{url('/data_file/'.$p->image)}}" width="500px" height="500px"></p>
+                <br><br>
+				
+                <h4>Deskripsi</h4><br>
+                <p>{{ $p->deskripsi }}</p>
+                <br><br>
 
-			<br>
-			<br>
-			<br>
-			<br>	
+                <h4>Alamat</h4><br>
+                <p>{{ $p->Alamat }}</p>
+                <br><br>
+
+                <h4>Jam Operasional</h4><br>
+                <p>{{ $p->jam_operasional }}</p>
+                <br><br>
+
+				<h4>Harga tiket</h4><br>
+                <p>{{ $p->harga_tiket }}</p>
+                <br><br>
+
+            </div>
+            @endforeach
+
+			<a href="/admin/objek_wisata"> Kembali</a>
+
+		<!-- start footer Area -->		
 			<footer class="footer-area section-gap">
 				<div class="container">
 					<div class="row">
@@ -89,7 +112,7 @@
 							<div class="single-footer-widget">
 								<h6>About Us</h6>
 								<p>
-									Annida Rizki | Auliya Khanza | Ba'auliyaul Afifah | Maheswari Paramita
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.
 								</p>
 								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             		<p class="footer-text">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
@@ -152,4 +175,4 @@
 			<script src="/js/waypoints.min.js"></script>		
 			<script src="/js/main.js"></script>	
 	</body>
-</html>
+</html>	

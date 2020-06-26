@@ -40,6 +40,10 @@
                     <!-- AAAA -->
                     <form action="{{ url('/registerPost') }}" method="post">
                         {{ csrf_field() }}
+                        @error('user_id')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+
                         @error('name')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -54,6 +58,7 @@
                         <input type="hidden" name="role" value="user">
                         <h3>Register</h3>
                         <br>
+                        
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="form-wrapper">
@@ -79,7 +84,7 @@
                         <div class="form-row">
                             <div class="form-wrapper">
                                 <div class="form-group">
-                                    <label for="alamat">Password :</label>
+                                    <label for="passsword">Password :</label>
                                     <input type="password" class="form-control" id="password" name="password">
                                 </div>
                             </div>
@@ -87,7 +92,7 @@
                         <div class="form-row">
                             <div class="form-wrapper">
                                 <div class="form-group">
-                                    <label for="alamat">Konfirmasi Password :</label>
+                                    <label for="confirmation">Konfirmasi Password :</label>
                                     <input type="password" class="form-control" id="confirmation" name="confirmation">
                                 </div>
                             </div>
